@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primeduel backup</title>
+<meta name="description" content="Primeduel backup: a private tool that copies backups of the Primeduel game server to its owner's Google Drive.">
+<style>
+  :root { --bg: #1c1d21; --card: #26282d; --text: #e9e6df; --muted: #a9a59c; --gold: #d4b062; --line: #3a3c42; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 56px; }
+  h1 { margin: 0 0 4px; font-size: 30px; line-height: 1.2; color: var(--gold); }
+  h2 { margin: 32px 0 8px; font-size: 19px; }
+  p, li { color: var(--text); }
+  ul { padding-left: 20px; }
+  .lead { color: var(--muted); margin: 0 0 24px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; }
+  a { color: var(--gold); }
+  code { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; font-size: 14px; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Primeduel backup</h1>
+  <p class="lead">A private backup tool of the Primeduel project</p>
+
+  <div class="card">
+    <p>Primeduel backup copies the nightly backups of the Primeduel game server to the Google Drive of the project owner and reads them back to check that a backup can be restored. It is used only by the project owner and is not offered to anyone else.</p>
+  </div>
+
+  <h2>What it does</h2>
+  <ul>
+    <li>Every night it uploads two files to the owner's Google Drive: a database dump and an archive of the server settings.</li>
+    <li>It keeps the last 30 copies of each kind and deletes older copies it created.</li>
+    <li>Once a month it downloads a copy and checks that the database can be restored from it.</li>
+  </ul>
+
+  <h2>Access to Google Drive</h2>
+  <p>The tool asks for one permission, <code>drive.file</code>: access only to the files and the folder that this tool created itself. It cannot see or change any other files in the owner's Google Drive and does not read the profile, contacts or email.</p>
+
+  <h2>Privacy</h2>
+  <p>How data is handled is described in the <a href="privacy.html">Privacy Policy</a>.</p>
+
+  <footer>
+    Owner: <a href="https://github.com/007Alex777">github.com/007Alex777</a>
+  </footer>
+</main>
+</body>
+</html>
